@@ -45,17 +45,17 @@ export default {
         },
         validateForm() {
             this.errors = {};
-            // Valido email
+            // Valid email
             if (!this.form.email) {
                 this.errors.email = "E-mail is required";
             } else if (!this.form.email.match(/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/)) {
                 this.errors.email = "The email does not have a valid format";
             }
-            // Valido il subject
+            // Valid subject
             if (!this.form.subject) {
                 this.errors.subject = "The email must contain the subject line";
             }
-            // Valido il content
+            // Valid content
             if (!this.form.content) {
                 this.errors.content = "The e-mail must contain a content";
             }

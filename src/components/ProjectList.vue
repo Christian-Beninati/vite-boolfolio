@@ -4,6 +4,7 @@ import ProjectCard from './ProjectCard.vue';
 import { store } from "../assets/data/store";
 export default {
     components: { ProjectCard },
+    props: { projects: Object },
     data() {
         return {
             store,

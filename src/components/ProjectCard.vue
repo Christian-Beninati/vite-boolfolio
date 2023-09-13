@@ -1,6 +1,6 @@
 <script>
 export default {
-    props: { project: Object },
+    props: { project: Object, isDetail: Boolean },
     methods: {
         getBgcolor(color) {
             return "bg-" + color;
@@ -18,6 +18,11 @@ export default {
                 </span></h4>
             <p class="card-text">{{ project.description }}</p>
             <a :href="project.url" class="btn btn-primary">Go to GitHub</a>
+            <div class=" mt-3" v-if="project.type">Type: {{ project.type.label }}</div>
+        </div>
+        <div class="card-footer" v-if="!isDetail">
+            <router-link :to="{ name: 'detail-page', params: { id: project.id } }" class="btn btn-primary">Go to Detail
+            </router-link>
         </div>
     </div>
 </template>
